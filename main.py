@@ -422,7 +422,7 @@ def main():
                 )
                 sys.exit(1)
 
-            server.run(transport="streamable-http", host=host, port=port)
+            server.run(transport="streamable-http", host=host, port=port, stateless_http=True)
         else:
             server.run()
     except KeyboardInterrupt:
