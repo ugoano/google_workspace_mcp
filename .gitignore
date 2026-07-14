@@ -25,7 +25,12 @@ client_secret.json
 
 # ---- Logs --------------------------------------------------------------
 mcp_server_debug.log
+launchd*.log
+launchd*.error.log
+launchd-personal*.log
+launchd-personal*.error.log
 
 # ---- Local development files -------------------------------------------
 /.credentials
 /.claude
+/tmp/
