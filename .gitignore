@@ -34,3 +34,6 @@ launchd-personal*.error.log
 /.credentials
 /.claude
 /tmp/
+
+# nightly restart job output
+nightly-restart*.log

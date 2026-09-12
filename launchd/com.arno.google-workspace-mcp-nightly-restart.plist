@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN"
+  "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+  <key>Label</key>
+  <string>com.arno.google-workspace-mcp-nightly-restart</string>
+
+  <key>ProgramArguments</key>
+  <array>
+    <string>/Users/ugo/dev/google_workspace_mcp/scripts/restart_launchd_jobs.sh</string>
+  </array>
+
+  <key>StartCalendarInterval</key>
+  <dict>
+    <key>Hour</key>
+    <integer>4</integer>
+    <key>Minute</key>
+    <integer>15</integer>
+  </dict>
+
+  <key>StandardOutPath</key>
+  <string>/Users/ugo/dev/google_workspace_mcp/nightly-restart.log</string>
+  <key>StandardErrorPath</key>
+  <string>/Users/ugo/dev/google_workspace_mcp/nightly-restart.error.log</string>
+</dict>
+</plist>
