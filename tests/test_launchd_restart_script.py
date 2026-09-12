@@ -49,5 +49,11 @@ def test_launchd_plist_schedules_nightly_restart_and_uses_script():
 
     plist = json.loads(parsed.stdout)
     assert plist["Label"] == "com.arno.google-workspace-mcp-nightly-restart"
-    assert plist["ProgramArguments"] == [str(SCRIPT)]
+    # The plist pins the deployed absolute path (that is what launchd runs), so
+    # we check it points at THIS script by relative path rather than by the
+    # checkout location - the test must pass from any clone, not only from
+    # /Users/ugo/dev/google_workspace_mcp.
+    (program,) = plist["ProgramArguments"]
+    assert Path(program).name == SCRIPT.name
+    assert Path(program).parent.name == SCRIPT.parent.name
     assert plist["StartCalendarInterval"] == {"Hour": 4, "Minute": 15}
